@@ -1,9 +1,10 @@
 from flask import Flask, jsonify
-#from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager
 from instance.config import app_config
-#from .api.v1.views.auth_endpoints import auth, BLACKLIST
-from .api.v1.views.question_endpoint import question
+from .api.v1.views.auth_endpoints import auth, BLACKLIST
+
 from .api.v1.views.meet_ups_endpoint import meetup
+from .api.v1.views.question_endpoint import question
 
 
 def create_app(config):
@@ -13,7 +14,7 @@ def create_app(config):
     app.config["TESTING"] = True
 
 
-    '''app.config['JWT_SECRET_KEY'] = 'mysecretkey'
+    app.config['JWT_SECRET_KEY'] = 'mysecretkey'
     app.config['JWT_BLACKLIST_ENABLED'] = True
     app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access']
     jwt = JWTManager(app)
@@ -22,7 +23,7 @@ def create_app(config):
     @jwt.user_claims_loader
     def add_claims_to_access_token(user_object):
 
-        #return {'role': user_object['username']}
+        return {'role': user_object['username']}
 
     @jwt.user_identity_loader
     def user_identity_lookup(user_object):
@@ -38,8 +39,8 @@ def create_app(config):
 
     @app.errorhandler(400)
     def bad_request(error):
-        error handler for Bad request'
-        return jsonify(dict(error='Bad request')), 400'''
+
+        return jsonify(dict(error='Bad request')), 400
 
     @app.errorhandler(404)
     def Resource_not_found(error):
@@ -55,10 +56,8 @@ def create_app(config):
     def unhandled_exception(e):
         return jsonify(dict(error='Internal server error')), 500
 
-    #app.register_blueprint(auth)
+    app.register_blueprint(auth)
     app.register_blueprint(meetup)
     app.register_blueprint(question)
-
-
 
     return app
