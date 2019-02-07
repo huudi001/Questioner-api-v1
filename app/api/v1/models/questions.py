@@ -21,7 +21,7 @@ class Questions():
 
 
         created_on = datetime.datetime.now()
-        created_by = int(created_by)
+
 
 
 
@@ -30,7 +30,7 @@ class Questions():
 
         self.single_question['question_id'] = question_id
         self.single_question['created_on'] = created_on
-        self.single_question['created_by'] = created_by
+        self.single_question['created_by'] =int(created_by)
         self.single_question['meetup'] = int(meetup)
         self.single_question['title'] = title
         self.single_question['body'] = body

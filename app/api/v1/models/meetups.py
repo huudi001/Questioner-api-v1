@@ -18,8 +18,9 @@ class MeetUps():
 
 
         #happening_on = str(dt.date(2019,6,12))
-        tags = [{"Tech":["coding", "computerScience", "IOT", "database", "Datastructures", "Algorithms"]},{"Food":["pizza", "biriani", "canjeelo"]}]
-        images = []
+        created_on = datetime.datetime.now()
+
+
 
 
 

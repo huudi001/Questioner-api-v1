@@ -21,7 +21,7 @@ class Users():
         if "message" not in username_data:
             return {"message": "Username already taken, try a different one"}
 
-        user_id = len(USERS_LIST) + 1
+        
         registered = dt.datetime.now()
 
         self.oneuser_dict["user_id"] = user_id
@@ -33,12 +33,12 @@ class Users():
         self.oneuser_dict["password"] = pw_hash
         self.oneuser_dict["phoneNumber"] = phoneNumber
         self.oneuser_dict["username"] = username
-        self.oneuser_dict["isAdmin"] = False
+        self.oneuser_dict["isAdmin"] = isAdmin
         self.oneuser_dict["registered"] = registered
 
 
         USERS_LIST.append(self.oneuser_dict)
-        return {"message": "User with username {} added successfully".format(username)}
+        return {"message": "User added successfully"}
 
     def verify_password(self, username, password):
 

@@ -27,13 +27,13 @@ def post_question():
     meetup = data.get("meetup")
 
 
-    question_info = [created_on,created_by, meetup, body, title, votes]
+    question_info = [question_id,created_on,created_by, meetup, body, title, votes]
 
     getter = _iterator(question_info)
     if getter == False:
         return jsonify({"message": "Some required fields are missing!"}), 206
     response = jsonify(Question.put(question_id, created_on, created_by, meetup, title, body, votes))
-    response.status_code = 200
+    response.status_code = 201
     return response
 
 

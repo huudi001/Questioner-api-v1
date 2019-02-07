@@ -6,12 +6,12 @@ from ..models.rsvp import RSVP_LIST
 from ..utils import get_by_key, _iterator
 
 
-rsvp = Blueprint('rsvp', __name__, url_prefix='/api/v1')
+rsvps = Blueprint('rsvps', __name__, url_prefix='/api/v1')
 
 db = rsvp.Rsvp()
 
 
-@rsvp.route('/rsvps', methods=['POST'])
+@rsvps.route('/rsvps', methods=['POST'])
 def post_rsvp():
     data = request.get_json()
     if not data:
