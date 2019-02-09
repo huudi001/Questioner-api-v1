@@ -43,8 +43,6 @@ def post_meetup():
     response = jsonify(MeetUp.put(meetup_id, created_on, location, images, topic, happening_on, tags))
     response.status_code = 201
     return response
-
-
 @meetup.route('/meetups/<upcoming>', methods=['GET'])
 #@jwt_required
 def get_all(upcoming):
