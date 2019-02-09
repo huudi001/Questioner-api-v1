@@ -25,7 +25,7 @@ class MeetUps():
 
         MEETUPS_LIST.append(self.single_meetup)
 
-        return {"message": "Meetup has been added successfully"}
+        return {"message": "MeetUp has been added successfully"}
 
     
     
