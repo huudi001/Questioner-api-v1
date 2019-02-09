@@ -13,7 +13,7 @@ class MeetUps():
             return {"message": "the meetup id  you entered is being used for another meetup"}
 
 
-
+        created_on = str(datetime.datetime.now())
         self.single_question['meetup_id'] = meetup_id
         self.single_question['created_on'] = created_on
         self.single_question['location'] = location
