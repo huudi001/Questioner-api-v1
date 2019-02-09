@@ -11,4 +11,3 @@ class BaseTestCase(TestCase):
 
     def tearDown(self):
         del MEETUPS_LIST[:]
-        
