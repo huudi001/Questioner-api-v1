@@ -9,7 +9,7 @@ def create_app(config):
     app = Flask(__name__)
     app.url_map.strict_slashes = False
     app.config.from_object(app_config[config])
-    app.config["TESTING"] = True
+    app.config["TESTING"] = True 
 
 
     app.config['JWT_SECRET_KEY'] = 'mysecretkey'

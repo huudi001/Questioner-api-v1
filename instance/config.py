@@ -2,7 +2,7 @@ import os
 
 class Config(object):
     '''parent config file'''
-    DEBUG = True
+    DEBUG = True  
     SECRET_KEY = 'nosecrethere'
 
 
