@@ -14,13 +14,13 @@ class MeetUps():
 
 
         created_on = str(datetime.datetime.now())
-        self.single_question['meetup_id'] = meetup_id
-        self.single_question['created_on'] = created_on
-        self.single_question['location'] = location
-        self.single_question['images'] = images
-        self.single_question['topic'] = topic
-        self.single_question['happening_on'] = happening_on
-        self.single_question['tags'] = tags
+        self.single_meetup['meetup_id'] = meetup_id
+        self.single_meetup['created_on'] = created_on
+        self.single_meetup['location'] = location
+        self.single_meetup['images'] = images
+        self.single_meetup['topic'] = topic
+        self.single_meetup['happening_on'] = happening_on
+        self.single_meetup['tags'] = tags
         
 
         MEETUPS_LIST.append(self.single_meetup)
