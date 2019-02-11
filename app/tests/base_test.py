@@ -1,6 +1,9 @@
 from unittest import TestCase
 from app import create_app
+from app.api.v1.models.questions import QUESTIONS_LIST
+
 from app.api.v1.models.meetups import MEETUPS_LIST
+
 class BaseTestCase(TestCase):
 
     def setUp(self):
@@ -10,4 +13,6 @@ class BaseTestCase(TestCase):
 
 
     def tearDown(self):
+        del QUESTIONS_LIST[:]
         del MEETUPS_LIST[:]
+
