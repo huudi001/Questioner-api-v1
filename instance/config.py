@@ -2,6 +2,8 @@ import os
 
 class Config(object):
     '''parent config file'''
+
+
     DEBUG = True
     SECRET_KEY = 'nosecrethere'
 
