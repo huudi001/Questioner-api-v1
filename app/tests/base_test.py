@@ -1,7 +1,8 @@
 from unittest import TestCase
 from app import create_app
 
-from app.api.v1.models.meetups import MEETUPS_LIST
+
+
 
 class BaseTestCase(TestCase):
 
@@ -12,4 +13,5 @@ class BaseTestCase(TestCase):
 
 
     def tearDown(self):
+
         del MEETUPS_LIST[:]

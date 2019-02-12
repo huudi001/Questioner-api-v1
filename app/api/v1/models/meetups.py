@@ -4,10 +4,7 @@ MEETUPS_LIST = []
 
 
 import datetime
-class MeetUps():
-
-
-
+class MeetUps()
     def get_upcoming(self,upcoming):
         upcoming = datetime.datetime.now().isoformat()
 
