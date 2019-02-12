@@ -4,6 +4,7 @@ from app.api.v1.models.questions import QUESTIONS_LIST
 
 
 
+
 class BaseTestCase(TestCase):
 
     def setUp(self):
@@ -13,5 +14,7 @@ class BaseTestCase(TestCase):
 
 
     def tearDown(self):
+
         del QUESTIONS_LIST[:]
        
+
