@@ -1,19 +1,25 @@
 from flask import Flask, jsonify
+from flask_jwt_extended import JWTManager
+from instance.config import app_config
+from .api.v1.views.meet_ups_endpoint import meetup
 #from flask_jwt_extended import JWTManager
 from instance.config import app_config
-#from .api.v1.views.auth_endpoints import auth, BLACKLIST
 
-from .api.v1.views.meet_ups_endpoint import meetup
+
 
 
 def create_app(config):
     app = Flask(__name__)
     app.url_map.strict_slashes = False
-    app.config.from_object(app_config[config])
+    app.config.from_object(app_config[config]
+    
+
+
+    app.config['JWT_SECRET_KEY'] = 'mysecretkey'
     app.config["TESTING"] = True
 
 
-    '''app.config['JWT_SECRET_KEY'] = 'mysecretkey'
+    
     app.config['JWT_BLACKLIST_ENABLED'] = True
     app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access']
     jwt = JWTManager(app)
@@ -41,6 +47,7 @@ def create_app(config):
         error handler for Bad request'
         return jsonify(dict(error='Bad request')), 400'''
 
+
     @app.errorhandler(404)
     def Resource_not_found(error):
 
@@ -55,8 +62,10 @@ def create_app(config):
     def unhandled_exception(e):
         return jsonify(dict(error='Internal server error')), 500
 
-    #app.register_blueprint(auth)
-    app.register_blueprint(meetup)
+
+    
+    app.register_blueprint(question)
+
 
 
 
