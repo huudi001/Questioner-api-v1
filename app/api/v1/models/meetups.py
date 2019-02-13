@@ -42,8 +42,4 @@ class MeetUps():
 
         return {"message": "MeetUp has been added successfully"}
 
-    def get_upcoming(self,upcoming):
-        upcoming = datetime.datetime.now().isoformat()
-
-        meetup = [meetups for meetups in MEETUPS_LIST if meetups['happening_on'] > upcoming]
-        return meetup
+    
