@@ -1,5 +1,6 @@
 from unittest import TestCase
 from app import create_app
+from app.api.v1.models.meetups import MEETUPS_LIST
 
 
 
